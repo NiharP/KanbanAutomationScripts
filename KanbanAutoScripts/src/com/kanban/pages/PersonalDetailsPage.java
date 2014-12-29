@@ -22,8 +22,7 @@ public class PersonalDetailsPage extends LoadableComponent<PersonalDetailsPage>{
 	By custLastName = By.id("ccLastname");
 	By custEmail = By.id("ccEmail");
 	By custDOB = By.id("ccDob");
-	By custMobileNumber = By.id("ccMobile");
-	By custLandline = By.id("ccLandline");
+	By custContactNo = By.id("ccContactNumber");
 	
 	By houseNumber = By.xpath("//input[@name='houseNum']");
 	By postcode = By.xpath("//input[@name='postcode']");
@@ -72,7 +71,7 @@ public class PersonalDetailsPage extends LoadableComponent<PersonalDetailsPage>{
 		driver.findElement(custEmail).sendKeys(PageUtils.generateRandomEmails());
 		driver.findElement(custDOB).sendKeys(customer.getDateOfBirth());
 		//driver.findElement(custMobileNumber).sendKeys(customer.getMobileNo());
-		driver.findElement(custLandline).sendKeys(customer.getLandline());
+		driver.findElement(custContactNo).sendKeys(customer.getLandline());
 		driver.findElement(houseNumber).sendKeys(customer.getHouseNameNum());
 		driver.findElement(postcode).sendKeys(customer.getPostcode());
 		driver.findElement(btnFindAddrs).click();
@@ -87,17 +86,17 @@ public class PersonalDetailsPage extends LoadableComponent<PersonalDetailsPage>{
 		driver.findElement(sortCode).sendKeys(customer.getSortCode());
 		driver.findElement(accountNumber).sendKeys(customer.getAccountNumber());
 		
-//		driver.findElement(linkCaptureCardDetails).click();
-//		
-//		String originalWindow = PageUtils.switchWindow(driver);
-//		
-//		CardDetails cardDetails = new CardDetails(driver);
-//		cardDetails.populateCardDetailsOnScreen();
-//		cardDetails.selectAddressAndSubmit();
-//		
-//		PageUtils.switchToMainWindow(originalWindow, driver);
-//		
-//		driver.findElement(chkbxAgreeToCreditCheck).click();
-//		driver.findElement(btnPerformCreditCheck).click();
+		driver.findElement(linkCaptureCardDetails).click();
+		
+		String originalWindow = PageUtils.switchWindow(driver);
+		
+		CardDetails cardDetails = new CardDetails(driver);
+		cardDetails.populateCardDetailsOnScreen();
+		cardDetails.selectAddressAndSubmit();
+		
+		PageUtils.switchToMainWindow(originalWindow, driver);
+		
+		driver.findElement(chkbxAgreeToCreditCheck).click();
+		driver.findElement(btnPerformCreditCheck).click();
 	}
 }

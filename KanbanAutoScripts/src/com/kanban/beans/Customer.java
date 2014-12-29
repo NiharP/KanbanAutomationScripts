@@ -37,10 +37,13 @@ public class Customer {
 		currAddrsMonths = PropertiesReader.getProperty("customer_details", "currAddrsMonths");
 		currAddrsYears = PropertiesReader.getProperty("customer_details", "currAddrsYears");
 		accountName = PropertiesReader.getProperty("customer_details", "accountName");
+		sortCode =PropertiesReader.getProperty("customer_details", "sortCode");
+		accountNumber =PropertiesReader.getProperty("customer_details", "accountNumber");
 		password =PropertiesReader.getProperty("customer_details", "password");
 		confirmPswd = PropertiesReader.getProperty("customer_details", "confirmPswd");
 		securityQue = PropertiesReader.getProperty("customer_details", "securityQue");
 		securityAns = PropertiesReader.getProperty("customer_details", "securityAns");
+		
 	}
 	
 	public String getTitle() {
